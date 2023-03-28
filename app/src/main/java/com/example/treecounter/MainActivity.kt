@@ -15,13 +15,14 @@ import java.time.format.DateTimeFormatter
 class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.O)
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+    val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
 
-    var counter = mutableListOf<String>()
-    lateinit var tvCount: TextView
-    lateinit var btnReset: Button
-    lateinit var btnSend: Button
-    lateinit var btnAdd: Button
+    private var counter : String = ""
+    private var count = 0
+    private lateinit var tvCount: TextView
+    private lateinit var btnReset: Button
+    private lateinit var btnSend: Button
+    private lateinit var btnAdd: Button
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,14 +36,14 @@ class MainActivity : AppCompatActivity() {
 
         btnAdd.setOnClickListener {
             val current = LocalDateTime.now().format(formatter)
-            Log.d("Testing", current)
-            println(current)
-            counter.add(current)
-            tvCount.text = counter.size.toString()
+            counter += "\r\n" + current
+            count++
+            tvCount.text = count.toString()
         }
 
         btnReset.setOnClickListener {
-            counter.clear()
+            counter = ""
+            count = 0
             tvCount.text = "0"
         }
 
@@ -50,8 +51,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val email = "glieutier@sensordata.com.uy"
                 val subject = "Tree report"
-                val message = counter.joinToString("\r\n")
-                Log.d("testing", message)
+                val message = counter
                 val emailIntent = Intent(Intent.ACTION_SEND)
                 emailIntent.type = "plain/text"
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
@@ -64,5 +64,23 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        if (savedInstanceState != null){
+            counter = savedInstanceState.getString("counter").toString()
+            count = savedInstanceState.getInt("count")
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+
+        outState.putString("counter", counter)
+        outState.putInt("count", count)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        counter = savedInstanceState.getString("counter").toString()
+        count = savedInstanceState.getInt("count")
     }
 }
