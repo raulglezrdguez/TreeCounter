@@ -10,7 +10,7 @@
         android:id="@+id/tvCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
+        android:text="@string/zero"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +31,7 @@
         app:layout_constraintVertical_bias=".2"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/purple_200"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/reset"/>
 
     <ImageButton
@@ -46,6 +47,7 @@
         app:tint="@color/teal_700"
         android:src="@drawable/email"
         android:scaleType="fitCenter"
+        android:contentDescription="@string/app_name"
         android:background="@android:color/transparent"
         />
 
@@ -60,6 +62,7 @@
         app:tint="@color/purple_700"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:contentDescription="@string/app_name"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
