@@ -52,12 +52,16 @@ class MainActivity : AppCompatActivity() {
                 val email = "glieutier@sensordata.com.uy"
                 val subject = "Tree report"
                 val message = counter
+                Log.d("testing", message)
                 val emailIntent = Intent(Intent.ACTION_SEND)
                 emailIntent.type = "plain/text"
                 emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
                 emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
                 emailIntent.putExtra(Intent.EXTRA_TEXT, message)
                 this.startActivity(Intent.createChooser(emailIntent, "Sending email..."))
+                count = 0
+                counter = ""
+                tvCount.text = "0"
             }
             catch (t: Throwable) {
                 Toast.makeText(this, "Request failed try again: $t", Toast.LENGTH_LONG).show()
