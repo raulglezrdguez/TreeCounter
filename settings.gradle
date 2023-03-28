@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        mavenCentral {
+            url 'https://maven.aliyun.com/repository/central'
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        mavenCentral {
+            url 'https://maven.aliyun.com/repository/central'
+        }
+    }
+}
+rootProject.name = "TreeCounter"
+include ':app'
