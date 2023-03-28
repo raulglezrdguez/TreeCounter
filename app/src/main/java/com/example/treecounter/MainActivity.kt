@@ -1,13 +1,12 @@
 package com.example.treecounter
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -20,17 +19,18 @@ class MainActivity : AppCompatActivity() {
     private var counter : String = ""
     private var count = 0
     private lateinit var tvCount: TextView
-    private lateinit var btnReset: Button
-    private lateinit var btnSend: Button
-    private lateinit var btnAdd: Button
+    private lateinit var btnReset: ImageButton
+    private lateinit var btnSend: ImageButton
+    private lateinit var btnAdd: ImageButton
 
+    @SuppressLint("MissingInflatedId")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         tvCount = findViewById(R.id.tvCount)
-        btnAdd = findViewById(R.id.btnAdd)
+        btnAdd = findViewById(R.id.ibAdd)
         btnReset = findViewById(R.id.btnReset)
         btnSend = findViewById(R.id.btnSend)
 

@@ -11,55 +11,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="62sp"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnReset"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".1"
         app:layout_constraintVertical_bias=".2"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="28sp"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/purple_200"
-        android:text="Reset"/>
+        app:tint="@color/purple_200"
+        android:src="@drawable/reset"/>
 
-    <Button
+    <ImageButton
         android:id="@+id/btnSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias=".9"
         app:layout_constraintVertical_bias=".2"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="28sp"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/teal_700"
-        android:text="Email"/>
+        app:tint="@color/teal_700"
+        android:src="@drawable/email"
+        android:scaleType="fitCenter"
+        android:background="@android:color/transparent"
+        />
 
-    <Button
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageButton
+        android:id="@+id/ibAdd"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias=".5"
-        app:layout_constraintVertical_bias=".8"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="28sp"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/purple_700"
-        android:text="Add"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias=".9"
+        android:src="@drawable/add"
+        app:tint="@color/purple_700"
+        android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
