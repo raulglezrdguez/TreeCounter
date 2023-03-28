@@ -67,12 +67,14 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState != null){
             counter = savedInstanceState.getString("counter").toString()
             count = savedInstanceState.getInt("count")
+            tvCount.text = count.toString()
         }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
+        Log.d("testing", "rotate")
         outState.putString("counter", counter)
         outState.putInt("count", count)
     }
@@ -80,7 +82,9 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
+        Log.d("testing", "restore")
         counter = savedInstanceState.getString("counter").toString()
         count = savedInstanceState.getInt("count")
+        tvCount.text = count.toString()
     }
 }
